@@ -1,10 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
-  _req: NextApiRequest,
+  req: NextApiRequest,
   res: NextApiResponse
 ) {
-  res.status(200).json({
-    message: "test",
+  if (req.method === "GET") {
+    res.status(200).json({
+      message: "test",
+    });
+  }
+  res.status(500).json({
+    message: "error",
   });
 }
