@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const path = require("path");
+const { parsed: localEnv } = require("dotenv-safe").config({
+  allowEmptyValues: false,
+  path: path.resolve(__dirname, `/.env.local`),
+});
 
-module.exports = nextConfig
+const nextConfig = {
+  env: localEnv,
+};
+
+module.exports = nextConfig;
