@@ -5,11 +5,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    res.status(200).json({
+    return res.status(200).json({
       message: "test",
     });
   }
-  res.status(500).json({
+  return res.status(500).json({
     message: "error",
   });
 }
