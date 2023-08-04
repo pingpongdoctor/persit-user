@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const uri =
-  "mongodb+srv://vercel-admin-user:e6MCKfhJJSATFd7M@lessyprojectdb.eqben55.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://thanhnhantran1501:nqpMapXzSAGYO6EG@cluster0.5impujc.mongodb.net/lessy?retryWrites=true&w=majority";
 
 console.log(uri);
 
