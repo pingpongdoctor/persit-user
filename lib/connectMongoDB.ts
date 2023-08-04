@@ -1,17 +1,23 @@
 import mongoose from "mongoose";
+const uri =
+  "mongodb+srv://vercel-admin-user:e6MCKfhJJSATFd7M@lessyprojectdb.eqben55.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-const connectMongoDB = async function () {
+console.log(uri);
+
+export const connectMongoDB = async () => {
   try {
-    await mongoose.set("strictQuery", true);
-    const conn = await mongoose.connect(
-      "mongodb+srv://thanhnhantran1501:nqpMapXzSAGYO6EG@cluster0.5impujc.mongodb.net/lessy?retryWrites=true&w=majority"
-    );
-    console.log(conn.connection.host);
-  } catch (e) {
-    console.log(e);
+    await mongoose.connect(uri);
+    console.log("CONNECTED TO MONGODB");
+  } catch (error) {
+    console.log(error);
   }
 };
 
-connectMongoDB();
-
-export default connectMongoDB;
+export const disconnectMongoDB = async () => {
+  try {
+    await mongoose.disconnect();
+    console.log("DISCONNECTED FROM MONGODB");
+  } catch (error) {
+    console.log(error);
+  }
+};

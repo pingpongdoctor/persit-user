@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import connectMongoDB from "@/lib/connectMongoDB";
-import { User } from "@/lib/userModel";
+import { connectMongoDB } from "lib/connectMongoDB";
+import { UserModel } from "lib/schemas";
 
 type PostBodyPayload = {
   email: string;
@@ -30,7 +30,7 @@ export default async function handler(
         email,
         name,
       };
-      const userRecord = await User.findOneAndUpdate({ email }, newUser, {
+      const userRecord = await UserModel.findOneAndUpdate({ email }, newUser, {
         new: true,
         upsert: true,
       });

@@ -1,14 +1,13 @@
-import connectMongoDB from "./connectMongoDB";
-import { User } from "./userModel";
+import { connectMongoDB, disconnectMongoDB } from "./connectMongoDB";
+import { ProjectModel, UserModel } from "./schemas";
 
 const main = async function () {
   await connectMongoDB();
 
-  await User.create({
-    email: "thanhnhan@gmail.com",
-    name: "simon",
-    auth0UserId: "123",
-  });
+  const users = await UserModel.find({});
+
+  console.log(users);
+  await disconnectMongoDB();
 };
 
 main();
