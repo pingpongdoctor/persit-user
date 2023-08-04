@@ -1,6 +1,6 @@
-import { connectMongoDB, disconnectMongoDB } from "@/pages/_lib/connectMongoDB";
+import { connectMongoDB, disconnectMongoDB } from "@/lib/connectMongoDB";
 import { NextApiRequest, NextApiResponse } from "next";
-import { ProjectModel } from "@/pages/_lib/schemas";
+import { ProjectModel } from "@/lib/schemas";
 
 export default async function handler(
   req: NextApiRequest,
