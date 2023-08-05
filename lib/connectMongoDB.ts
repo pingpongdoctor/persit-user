@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 const uri =
-  "mongodb+srv://thanhnhantran1501:nqpMapXzSAGYO6EG@cluster0.5impujc.mongodb.net/lessy?retryWrites=true&w=majority";
-
-console.log(uri);
+  "mongodb+srv://platform1:<password>@dev-1.lx46a1r.mongodb.net/Eleena?retryWrites=true&w=majority";
 
 export const connectMongoDB = async () => {
   try {
